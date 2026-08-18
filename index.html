@@ -265,6 +265,48 @@
       color: rgba(250,247,243,0.3);
     }
 
+    /* Stavová hláška — volná kapacita */
+    .founder-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px 7px 12px;
+      border: 1px solid rgba(250,247,243,0.25);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #faf7f3;
+      margin-bottom: 18px;
+    }
+    .founder-status .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7fb37a;
+      flex-shrink: 0;
+    }
+
+    /* Odkaz na osobní web — stejný "pill" styl jako stavová hláška */
+    .founder-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 2px;
+      padding: 9px 20px;
+      border: 1px solid rgba(250,247,243,0.25);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #faf7f3;
+      text-decoration: none;
+      transition: border-color .2s, background .2s;
+    }
+    .founder-link:hover {
+      border-color: rgba(250,247,243,0.5);
+      background: rgba(250,247,243,0.08);
+    }
+    .founder-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
     /* Na mobilu — foto nad textem, vše na střed */
     @media (max-width: 600px) {
       .founder-card {
@@ -273,6 +315,7 @@
       }
       .founder-left { margin: 0 auto; }
       .founder-edu li { text-align: left; }
+      .founder-status { margin-left: auto; margin-right: auto; }
     }
 
     footer { background: var(--bg); border-top: 1px solid var(--border); padding: 26px 24px; }
@@ -378,7 +421,7 @@
     <div class="pricing-intro">
       <p class="section-label">Ceník</p>
       <h2>Kolik vás to bude stát</h2>
-      <p>Otevírací hodiny 7:00–21:00. Vyberte si formát, který vám vyhovuje.</p>
+      <p>Vyberte si formát, který vám vyhovuje.</p>
     </div>
     <div class="pricing-grid">
       <!-- Řádek 1: Celodenní / Hodinový -->
@@ -500,9 +543,11 @@
 
       <div class="faq-item"><button class="faq-q">Musím vše řešit osobně?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><p class="faq-a">Vše — rezervace, nahrání kreditu, smlouva i komunikace — lze vyřídit online. Preferuji však osobní schůzku, zvláště na úvod. Prostory je možné si prohlédnout a na místě se zodpovím na všechny otázky.</p></div>
 
-      <div class="faq-item"><button class="faq-q">Jak se dostanu do terapeutovny?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><p class="faq-a">Poté, co máte zarezervovaný čas, funguje i váš přidělený PIN ke vchodovým dveřím. Do prostoru tak vstoupíte samostatně a bez čekání. Svého klienta pak vyzvednete u vchodu, až dorazí.</p></div>
+      <div class="faq-item"><button class="faq-q">Jaké jsou otevírací hodiny terapeutovny?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><p class="faq-a">Otevírací hodiny terapeutovny jsou 7:00–21:00. Je to čas, který je dostupný pro vás i vaše klienty včetně přípravy a úklidu. Mimo tento čas již nebudou fungovat ani přístupy do terapeutovny.</p></div>
 
-      <div class="faq-item"><button class="faq-q">Je u terapeutovny parkování?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><p class="faq-a">Ano. Terapeutovna disponuje jedním parkovacím místem přímo u vchodu — můžete ho využít pro sebe nebo ho přenechat klientovi. Další parkování je dostupné na přilehlé silnici u rezidence.</p></div>
+      <div class="faq-item"><button class="faq-q">Jak se dostanu do terapeutovny?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><p class="faq-a"><strong>Dveře do bytového domu:</strong><br>Během otevíracích hodin stačí zazvonit na zvonek Terapeutovny a ten vám dveře automaticky otevře. Do domu tak vstoupíte vy i klient samostatně a bez čekání. Po příchodu klienta uslyšíte zazvonit zvonek, který spouští automatickou akci otevření dveří, takže víte, že je na cestě.<br><br><strong>Dveře do terapeutovny:</strong><br>Poté, co máte zarezervovaný čas, funguje váš přidělený PIN ke vchodovým dveřím přímo do terapeutovny. Po naťukání vás dveře pustí. Svým klientům pak otevíráte sami.</p></div>
+
+      <div class="faq-item"><button class="faq-q">Parkování<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><p class="faq-a">Parkování je u domu a je vyznačeno cedulí. Místo je vyhrazeno pro vás jako nájemce terapeutovny.<br><br>Vjezd do dvoru s parkovištěm je za závorou, která se ovládá prozvoněním telefonního čísla. Po vaší registraci vám číslo nasdílím a budete přidán do skupiny s oprávněním otevírat závoru.<br><br>Vaši klienti mohou využít dostupná parkoviště v okolních ulicích, kterých je dostatek. Je to hlavně z důvodu zajištění dodržování pravidel parkování, které by noví klienti nemuseli dodržovat správně. Parkování na místech sousedů pak vyvolává zbytečné konflikty.</p></div>
     </div>
   </div>
 </section>
@@ -526,8 +571,10 @@
         />
         <p class="founder-name">Mgr. Tereza Kuchtová</p>
         <p class="founder-role">Zakladatelka</p>
+        <a href="https://terezakuchtova.cz/" target="_blank" rel="noopener" class="founder-link">Můj web <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
       </div>
       <div class="founder-right">
+        <span class="founder-status"><span class="status-dot"></span>V současnosti mám volnou kapacitu a nabírám nové klienty</span>
         <p class="founder-bio">Jsem sociální pedagog a frekventant psychoterapeutického výcviku. Psychoterapie na „vlastní triko" je nekomfortní pro všechny začínající terapeuty, terapeuty při zaměstnání, ale i lektory a jiné pomáhající profese. Měla jsem možnost využít krásný prostor a začít tvořit. Nabízím tedy sdílenou terapeutovnu a chtěla bych ji tímto způsobem zpřístupnit bez starostí i ostatním. Budoucím cílem je i sdružování a propojení skupiny terapeutů, se kterými by bylo možné rozšířit nabídku psychoterapie.</p>
         <p class="founder-edu-label">Vzdělání</p>
         <ul class="founder-edu">
